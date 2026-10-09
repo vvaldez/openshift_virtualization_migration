@@ -1,0 +1,16 @@
+---
+# Root collection requirements.
+#
+# AAP installs these into /runner/requirements_collections at job run time so
+# the playbooks' FQCN role references
+# (infra.openshift_virtualization_migration.*) resolve inside the execution
+# environment. The shipped EE does not contain the collection, and AAP
+# installs project collection requirements ONLY from this file — without it
+# every AAP job fails with "role ... was not found" (live-verified
+# 2026-10-09).
+#
+# Installed from this repo at the v2 branch so the job-time collection
+# matches the synced project playbooks exactly.
+collections:
+  - name: https://github.com/redhat-cop/openshift_virtualization_migration.git
+    version: v2
