@@ -9,9 +9,10 @@
 # every AAP job fails with "role ... was not found" (live-verified
 # 2026-10-09).
 #
-# Installed from this repo at the v2 branch so the job-time collection
-# matches the synced project playbooks exactly. The git+ prefix is required —
-# without it ansible-galaxy treats the URL as a tarball download.
+# Installed from this repo at the branch that ships this requirements.yml so
+# the job-time collection matches the synced project playbooks exactly (and
+# picks up the patched galaxy.yml). The git+ prefix is required — without it
+# ansible-galaxy treats the URL as a tarball download.
 collections:
-  - name: git+https://github.com/redhat-cop/openshift_virtualization_migration.git
-    version: v2
+  - name: git+https://github.com/vvaldez/openshift_virtualization_migration.git
+    version: aap-requirements
