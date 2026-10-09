@@ -23,7 +23,11 @@ tags:
   - kubevirt
   - migration
 dependencies:
-  "redhat.openshift_virtualization": ">=2.1.0"
+  # redhat.openshift_virtualization dropped on this validation branch: no
+  # role/playbook/plugin in this repo calls its modules (metadata-only
+  # dependency) and the collection is certified-only (Automation Hub), which
+  # AAP controllers without a hub token configured at install time cannot
+  # resolve — failing the project requirements sync entirely.
   "redhat.openshift": ">=4.0.0"
   "vmware.vmware_rest": ">=4.6.0"
   # AAP 2.5 can leverage the latest version of the collection. 2.4 must use <=4.5.12
