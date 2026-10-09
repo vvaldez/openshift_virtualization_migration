@@ -10,7 +10,8 @@
 # 2026-10-09).
 #
 # Installed from this repo at the v2 branch so the job-time collection
-# matches the synced project playbooks exactly.
+# matches the synced project playbooks exactly. The git+ prefix is required —
+# without it ansible-galaxy treats the URL as a tarball download.
 collections:
-  - name: https://github.com/redhat-cop/openshift_virtualization_migration.git
+  - name: git+https://github.com/redhat-cop/openshift_virtualization_migration.git
     version: v2
